@@ -10,16 +10,6 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
-vector<string> splitString(const string& line, char delimiter) {
-    vector<string> tokens;
-    string token;
-    istringstream tokenStream(line);
-    while (getline(tokenStream, token, delimiter)) {
-        tokens.push_back(token);
-    }
-    return tokens;
-}
-
 class Customer  {
 public:
     string id;
@@ -57,6 +47,16 @@ void setup() {
     fs::remove(sourceFile);
 
     std::cout << "Действия выполнены." << std::endl;
+}
+
+vector<string> splitString(const string& line, char delimiter) {
+    vector<string> tokens;
+    string token;
+    istringstream tokenStream(line);
+    while (getline(tokenStream, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    return tokens;
 }
 
 int main() {
